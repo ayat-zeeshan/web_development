@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background effects in CSS</title>
+    <style>
+        div {
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+
+        #linear {
+            height: 200px;
+            width: 300px;
+
+            background: linear-gradient(to bottom left, red, yellow, beige);
+            border: 2px solid red;
+        }
+
+        #radial {
+            height: 200px;
+            width: 300px;
+            background: radial-gradient(circle, blue, teal, rgb(120, 48, 120));
+            border: 2px solid teal;
+
+        }
+
+        #image {
+            height: 500px;
+            width: 300px;
+            background-image: url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80");
+            background-repeat: no-repeat;
+            border: 2px solid purple;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Background effects in CSS</h1>
+    <h2>Linear Gradient</h2>
+    <div id="linear">Linear Gradient</div>
+    <h2>Radial Gradient</h2>
+    <div id="radial">Radial Gradient</div>
+    <h2>Background Image</h2>
+    <div id="image">Background Image</div>
+</body>
+
+</html>
