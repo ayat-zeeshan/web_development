@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap containers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Bootstrap containers</h1>
+    <div class="container-sm my-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3>Gaming Zone</h3>
+                <p>Wrapped in <b>.container-sm</b> (Compact and centered)</p>
+                <button type="button" class="btn btn-primary btn-sm">Level 99</button><br><br>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 75%"></div>
+                </div><br>
+                <button type="button" class="btn btn-dark">Start Match</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid my-5">
+        <div class="card shadow-sm border-start border-4" style="border-left-color: yellow;">
+            <div class="card-body">
+
+                <h3 class="card-title mb-2">Travel Diary</h3>
+                <p class="text-muted mb-3">Wrapped in <b>.container-fluid</b> (Full Width)</p>
+
+                <!-- Slider box -->
+                <div id="locationCarousel" class="carousel slide d-inline-block">
+                    <div class="carousel-inner bg-light rounded px-3 py-2">
+
+                        <div class="carousel-item active text-center ">
+                            <p class="fw-semibold mb-0">Tokyo, Japan</p>
+                        </div>
+
+                        <div class="carousel-item text-center">
+                            <p class="fw-semibold mb-0">Doha, Qatar</p>
+                        </div>
+
+                        <div class="carousel-item text-center">
+                            <p class="fw-semibold mb-0">London, England</p>
+                        </div>
+
+                    </div>
+                </div><br>
+
+                <button class="btn btn-warning fw-semibold mt-3 full-width">
+                    Book Next Flight
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="card shadow-sm border-start;">
+            <div class="card-body">
+                <h3 class="text-success">Creative coding</h3>
+                <p class="text-muted mb-3">Wrapped in <b>.container</b> (Full Width)</p>
+                <span class="badge rounded-pill text-bg-success">html</span>
+                <span class="badge rounded-pill text-bg-info">CSS</span>
+                <span class="badge rounded-pill text-bg-dark">bootstrap</span><br><br>
+                <div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar progress-bar-striped bg-success" style="width: 60%">Compiling 60%</div>
+                </div>
+
+
+
+
+
+
+                <script src="https://cdn.jsdelivr.net/npm/boorap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYntst3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>
