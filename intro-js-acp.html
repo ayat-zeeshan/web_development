@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intro to JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Intro to JS</h1>
+    <label for="num1">Enter value for num1</label>
+    <input type="number" name="num1" id="num1">
+    <label for="num2">Enter value for num2</label>
+    <input type="number" name="num2" id="num2">
+    <button type="button" class="btn btn-success" onclick="add()">Add</button>
+    <p id="addoutput"></p>
+
+    <label for="sub1">Enter value for sub1</label>
+    <input type="number" name="sub1" id="sub1">
+    <label for="sub2">Enter value for sub2</label>
+    <input type="number" name="sub2" id="sub2">
+    <button type="button" class="btn btn-success" onclick="subtract()">subtract</button>
+    <p id="suboutput"></p>
+    
+    <label for="mul1">Enter value for mul1</label>
+    <input type="number" name="mul1" id="mul1">
+    <label for="mul2">Enter value for mul2</label>
+    <input type="number" name="mul2" id="mul2">
+    <button type="button" class="btn btn-success" onclick="multiply()">multiply</button>
+    <p id="muloutput"></p>
+    
+    <label for="div1">Enter value for div1</label>
+    <input type="number" name="div1" id="div1">
+    <label for="div2">Enter value for div2</label>
+    <input type="number" name="div2" id="div2">
+    <button type="button" class="btn btn-success" onclick="divide()">divide</button>
+    <p id="divoutput"></p>
+    <script>
+        function add() {
+            let num1 = Number(document.getElementById("num1").value)
+            let num2 = Number(document.getElementById("num2").value)
+
+            document.getElementById("addoutput").innerHTML = `the addition of ${num1} and ${num2} is  ${num1 + num2}`
+        }
+        function subtract() {
+
+            let sub1 = Number(document.getElementById("sub1").value)
+            let sub2 = Number(document.getElementById("sub2").value)
+            document.getElementById("suboutput").innerHTML =
+                `The subtraction of ${sub1} and ${sub2} is ${sub1 - sub2}`
+        }
+        function multiply() {
+                let mul1 = Number(document.getElementById("mul1").value)
+                let mul2 = Number(document.getElementById("mul2").value)
+                document.getElementById("muloutput").innerHTML =
+                    `The multiplication of ${mul1} and ${mul2} is ${mul1 * mul2}`
+            }
+
+    function divide() {
+        let div1 = Number(document.getElementById("div1").value)
+        let div2 = Number(document.getElementById("div2").value)
+        document.getElementById("divoutput").innerHTML =
+            `The multiplication of ${div1} and ${div2} is ${div1 / div2}`
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
