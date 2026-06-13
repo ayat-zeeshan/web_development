@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Defining an Object</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Defining an Object</h1>
+    <p id="output"></p>
+    <p id="secondOutput"></p>
+    <script>
+        let programmer = {
+            name: "Rob",
+            age: 33,
+            city: "London",
+            salary: "£40,000",
+            programming_language: "JS",
+            position: "Mid-Level developer",
+            skill: "Web development"
+        }
+        let teacher = {
+            name: "Martha",
+            age: "42",
+            school: "Dormers Wells High School",
+            teaching_year: "Year 9",
+            salary: "£36,000",
+            subject: "Biology"
+        }
+
+        document.getElementById("output").innerHTML = `Hello. My name is ${programmer.name}. I am ${programmer.age}, and I am currently living in ${programmer.city}. I have a pretty high salary of ${programmer.salary}, because I am a ${programmer.position}. The programming language I use is ${programmer.programming_language}, and my skill is ${programmer.skill}.`
+        document.getElementById("secondOutput").innerHTML = `Hey there! I am ${teacher.name}, and I am ${teacher.age} years old. I have a job at ${teacher.school} as a ${teacher.subject} teacher who provides lessons for ${teacher.teaching_year}. My salary is quite good, it is ${teacher.salary}.`
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
