@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animal centre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="p-3 mb-2 bg-info-subtle text-info-emphasis d-flex justify-content-center align-items-center flex-column gap-3 vh-100">
+    <div><h2>Meet Your Cat 🐾</h2>
+    
+    
+    <h2 id="pet">😺</h2>
+    
+    <h2 id="status">Status: Waiting...</h2>
+    
+    <button id="feedBtn">Feed Cookie 🍪</button>
+    </div>
+    <div>
+        <h2>Say hello to the rabbit</h2>
+        <p id="rabbit">🐰</p>
+        <p id="rabbitStatus">Status: Waiting for a carrot...</p>
+            <button id="carrotBtn">Give Carrot 🥕</button>
+    </div>
+
+    <script>
+        
+        var pet = document.getElementById("pet");
+        var statusText = document.getElementById("status");
+        var feedButton = document.getElementById("feedBtn");
+
+        
+        let cookieCount = 0;
+
+        
+        feedButton.addEventListener("click", function () {
+            cookieCount++;
+
+            if (cookieCount === 1) {
+                statusText.innerText = "Status: Eating 😋 (1 cookie)";
+                pet.innerText = "😸"; 
+            }
+            else if (cookieCount === 2) {
+                statusText.innerText = "Status: Eating more 😻 (2 cookies)";
+                pet.innerText = "😻";
+            }
+            else if (cookieCount === 3) {
+                statusText.innerText = "Status: Happy and fed! 💖 (3 cookies)";
+                pet.innerText = "😽"; 
+                feedButton.innerText = "All done! 😅";
+                feedButton.disabled = true; 
+            }
+            else {
+                statusText.innerText = "Status: Eating... (" + cookieCount + " cookies)";
+            }
+        });
+    </script>
+    <script>
+         var rabbit = document.getElementById("rabbit");
+            var rabbitStatus = document.getElementById("rabbitStatus");
+            var carrotBtn = document.getElementById("carrotBtn");
+             let carrotCount = 0;
+              carrotBtn.addEventListener("click", function () {
+                    carrotCount++;
+
+                    if (carrotCount === 1) {
+                        rabbitStatus.innerText = "Status: Nibbling softly 😋 (1 carrot)";
+                        rabbit.innerText = "🐰✨";
+                    }
+                    else if (carrotCount === 2) {
+                        rabbitStatus.innerText = "Status: Crunching happily 😄 (2 carrots)";
+                        rabbit.innerText = "🐰😄";
+                    }
+                    else if (carrotCount === 3) {
+                        rabbitStatus.innerText = "Status: Bunny is full & joyful! 💖 (3 carrots)";
+                        rabbit.innerText = "🐰😍";
+                        carrotBtn.innerText = "No more carrots! 😅";
+                        carrotBtn.disabled = true;
+                    }
+                    else {
+                        rabbitStatus.innerText = "Status: Eating... (" + carrotCount + " carrots)";
+                    }
+                });
+    </script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+        
+</body>
+
+</html>
