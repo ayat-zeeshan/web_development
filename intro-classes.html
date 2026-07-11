@@ -1,0 +1,45 @@
+<!-- '''create a Planet class with a constructor that assigns name and fact properties, along with a describe() method that
+returns those values as a formatted string. Within the showPlanets() function, instantiate the class for Earth, Mars,
+and Saturn, then use document.getElementById() to target your HTML container elements and update their innerHTML with
+the corresponding object data wrapped in CSS-styled <div> tags.''' -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Classes in JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Planet cards:</h1>
+<div id="p1" class="p-3 mb-2 bg-success-subtle text-success-emphasis"></div>
+<div id="p2" class="p-3 mb-2 bg-danger-subtle text-danger-emphasis"></div>
+<div id="p3" class="p-3 mb-2 bg-warning-subtle text-warning-emphasis"></div>
+    <script>
+        class Planet {
+            constructor(name, fact) {
+                this.name  = name
+                this.fact  = fact
+            }
+            describe() {
+                return `Planet name: ${this.name}, Planet fact: ${this.fact}`
+            } 
+
+        }
+        let p1 = new Planet ("Earth", "Around 75% of this planet consists of water")
+        let p2 = new Planet ("Mars", "This planet is around the same size of the Earth")
+        let p3 = new Planet ("Saturn", "Alongside Jupiter, this planet is considered a gas giant")
+        document.getElementById("p1").innerHTML = p1.describe()
+        document.getElementById("p2").innerHTML = p2.describe()
+        document.getElementById("p3").innerHTML = p3.describe()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
