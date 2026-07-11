@@ -15,91 +15,77 @@
     <input type="number" name="userGrade" id="userGrade"><br><br>
     <button type="button" class="btn btn-success" onclick="findGrade()">Find your Grade</button><br><br>
     <p id="output"></p>
+
     <script>
 
         function findGrade() {
-            var marks = document.getElementById("userGrade").value
+            var marks = Number(document.getElementById("userGrade").value)
+
+            
+            if (isNaN(marks)) {
+                document.getElementById("output").innerText = "Please enter a number."
+                return
+            }
 
             var grade
             var gpa
+
             if (marks >= 97) {
                 grade = "A+"
                 gpa = 4.00
             }
-            document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
-            if (marks >= 93) {
+            else if (marks >= 93) {
                 grade = "A"
                 gpa = 3.67
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 90) {
+            else if (marks >= 90) {
                 grade = "A-"
                 gpa = 3.33
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 87) {
+            else if (marks >= 87) {
                 grade = "B+"
                 gpa = 3.00
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 83) {
+            else if (marks >= 83) {
                 grade = "B"
                 gpa = 2.67
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 80) {
+            else if (marks >= 80) {
                 grade = "B-"
                 gpa = 2.33
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 77) {
+            else if (marks >= 77) {
                 grade = "C+"
                 gpa = 2.00
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 73) {
+            else if (marks >= 73) {
                 grade = "C"
                 gpa = 1.67
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 70) {
+            else if (marks >= 70) {
                 grade = "C-"
                 gpa = 1.33
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 67) {
+            else if (marks >= 67) {
                 grade = "D+"
                 gpa = 1.00
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 63) {
+            else if (marks >= 63) {
                 grade = "D"
                 gpa = 0.67
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks >= 60) {
+            else if (marks >= 60) {
                 grade = "D-"
                 gpa = 0.33
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
-
-            if (marks < 60) {
+            else {
                 grade = "F"
                 gpa = 0.00
-                document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
             }
 
+            document.getElementById("output").innerText = `You got ${grade} and a GPA of ${gpa}`
         }
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
