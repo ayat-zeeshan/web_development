@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    }
+    
+    #card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    }
+    
+    .hero-card {
+    background: #222;
+    border-radius: 8px;
+    padding: 16px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+    text-align: left;
+    }
+    
+    .hero-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    }
+    
+    .hero-power {
+    font-size: 1rem;
+    color: #ffdd57;
+    margin-bottom: 4px;
+    }
+    
+    .hero-rating {
+    font-size: 0.95rem;
+    color: #7dd3fc;
+    margin-bottom: 8px;
+    }
+    
+    .hero-desc {
+    font-size: 0.85rem;
+    color: #cfcfcf;
+    margin-top: 6px;
+    }
+</style>
+</head>
+
+<body>
+    <h1>Superhero Cards</h1>
+    <div id="card-container"></div>
+    <script>
+        class Superhero {
+                constructor(name, power, rating) {
+                    this.name = name;
+                    this.power = power;
+                    this.rating = rating;
+                }
+
+                describe() {
+                    return `${this.name} uses ${this.power} and has a rating of ${this.rating}/10.`;
+                }
+            }
+
+            const heroes = [
+                new Superhero("Stormflare", "lightning control", 9),
+                new Superhero("Shadowstep", "invisibility and stealth", 8),
+                new Superhero("Solaris", "solar energy blasts", 10),
+            ];
+
+            const container = document.getElementById("card-container");
+
+            
+            let html = "";
+
+            heroes.forEach(hero => {
+                html += `
+    <div class="hero-card">
+      <div class="hero-name">${hero.name}</div>
+      <div class="hero-power">Power: ${hero.power}</div>
+      <div class="hero-rating">Rating: ${hero.rating}/10</div>
+      <div class="hero-desc">${hero.describe()}</div>
+    </div>
+  `;
+            });
+
+            container.innerHTML = html;
+
+    </script>
+
+</body>
+</html>
