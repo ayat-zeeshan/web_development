@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Array sorting and mapping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Array sorting and mapping</h1>
+    <p id="original"></p>
+    <p id="output"></p>
+    <button type="button" class="btn btn-success" onclick="sortAsc()">Sort- ascending</button>
+    <button type="button" class="btn btn-danger" onclick="sortDes()">Sort- descending</button>
+    <button type="button" class="btn btn-warning" onclick="reverseArray()">Reverse</button>
+    <button type="button" class="btn btn-info" onclick="findCube()">Cube</button>
+    <script>
+        var original_nums = [4, 16, 5, 7, 13]
+        document.getElementById("original").innerHTML = original_nums
+
+
+        nums.reverse()
+        function sortAsc() {
+            var nums = original_nums
+            nums.sort(function (a, b) { return a - b; })
+            document.getElementById("output").innerHTML = nums
+        }
+        function sortDes() {
+            var nums = original_nums
+            nums.sort(function (a, b) { return b - a; })
+            document.getElementById("output").innerHTML = nums
+        }
+        function reverseArray() {
+            var nums = original_nums
+            nums.reverse()
+            document.getElementById("output").innerHTML = nums
+        }
+        function findCube() {
+            var nums = original_nums
+            var cube_array = nums.map(function (n) { return n * n * n })
+            
+            document.getElementById("output").innerHTML = cube_array
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
