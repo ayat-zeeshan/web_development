@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>JS detail</h1>
+
+    <input type="text" name="userInp" id="userInp">
+    <button type="button" class="btn btn-danger" onclick="findType()">Find type</button>
+    <!-- <button type="button" class="btn btn-warning" onclick="convertStr()">Convert to string</button> -->
+    <button type="button" class="btn btn-info" onclick="convertNum()">Convert to number</button>
+    <p id="output"></p>
+    <script>
+        function findType() {
+            var userInp = document.getElementById("userInp").value
+            document.getElementById("output").innerHTML = typeof userInp
+        }
+        function convertNum() {
+            var userInp = document.getElementById("userInp").value
+            try {
+                var convertval = Number(userInp)
+                if(isNaN(convertval)) {
+                    throw "cannot be converted to a number"
+                }
+                document.getElementById("output").innerHTML = convertval
+            }
+            catch (e) {
+                document.getElementById("output").innerHTML = "error: " + e
+            }
+
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
