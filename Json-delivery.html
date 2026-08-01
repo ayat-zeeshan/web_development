@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delivery tracker</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Delivery tracker</h1>
+
+    <button type="button" class="btn btn-danger" onclick="save()">Save order</button>
+    <button type="button" class="btn btn-danger" onclick="startDeliveryTracking()">Track delivery</button>
+
+    <p id="outputOne"></p>
+    <p id="outputTwo"></p>
+    <p id="outputThree"></p>
+    <p id="outputFour"></p>
+    <p id="output5"></p>
+
+    <script>
+
+        function save() {
+            let order = {
+                item: "Pizza",
+                price: 5,
+                shop: "My Snack Shop"
+            };
+
+            let jsonOrder = JSON.stringify(order);
+            document.getElementById("outputOne").innerHTML = jsonOrder;
+
+            let parsedOrder = JSON.parse(jsonOrder);
+
+            document.getElementById("outputTwo").innerHTML = "Loaded Item: " + parsedOrder.item;
+            document.getElementById("outputThree").innerHTML = "Loaded Price: $" + parsedOrder.price;
+            document.getElementById("outputFour").innerHTML = "Loaded Shop: " + parsedOrder.shop;
+        }
+
+        function showDeliveryStatus(message) {
+            document.getElementById("outputFour").innerHTML = message;
+        }
+
+        function trackDelivery(callback) {
+
+            callback("Preparing order...");
+
+            return new Promise(function (resolve) {
+
+                setTimeout(function () {
+
+                    callback("Collected by driver");
+
+                    setTimeout(function () {
+
+                        callback("Out for delivery!");
+
+                        setTimeout(function () {
+
+                            let deliveryInfo = {
+                                finalStatus: "Your order has arrived!"
+                            };
+
+                            resolve(deliveryInfo);
+
+                        }, 1000);
+
+                    }, 2000);
+
+                }, 2000);
+
+            });
+        }
+
+        async function startDeliveryTracking() {
+
+            let deliveryData = await trackDelivery(showDeliveryStatus);
+
+            let jsonText = JSON.stringify(deliveryData);
+            let parsedDelivery = JSON.parse(jsonText);
+
+            document.getElementById("output5").innerHTML = parsedDelivery.finalStatus;
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
