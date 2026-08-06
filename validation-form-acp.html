@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>User Registration</h1>
+
+    <input type="text" id="nameInput" placeholder="Enter your name" class="form-control" style="width:300px;">
+    <br>
+    <input type="text" id="passwordInput" placeholder="Enter password" class="form-control" style="width:300px;">
+    <br>
+    <input type="number" id="ageInput" placeholder="Enter age" class="form-control" style="width:300px;">
+    <br>
+
+    <button class="btn btn-primary" onclick="registerUser()">Register</button>
+
+    <p id="messageOutput"></p>
+
+    <script>
+
+        function registerUser() {
+
+            let name = document.getElementById("nameInput").value;
+            let password = document.getElementById("passwordInput").value;
+            let age = document.getElementById("ageInput").value;
+
+            if (name === "" || password === "" || age === "") {
+                document.getElementById("messageOutput").innerHTML = "Please enter all required fields correctly.";
+                return;
+            }
+
+            if (password.length < 3) {
+                document.getElementById("messageOutput").innerHTML = "Please enter a password with at least three characters.";
+                return;
+            }
+
+            if (age < 8) {
+                document.getElementById("messageOutput").innerHTML = "Sorry, you must be at least 8 to register here.";
+                return;
+            }
+
+            document.getElementById("messageOutput").innerHTML = "Registration successful! Welcome, " + name + "!";
+        }
+
+    </script>
+
+</body>
+
+</html>
