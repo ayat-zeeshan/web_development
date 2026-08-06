@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS apps</title>
+</head>
+
+<body>
+    <h1>JS apps</h1>
+    <script>
+        function areaRectangle() {
+            var length = prompt(" Enter the length")
+            var width = prompt("Enter the width")
+            alert("The area of the rectangle is " + (length * width))
+        }
+        function areaTriangle() {
+            var basetriangle = prompt("Enter the base")
+            var height = prompt("Enter the height")
+            alert("The area of the triangle is " + (basetriangle * height * 0.5))
+        }
+        function areaCircle() {
+            var radius = prompt("Enter the radius")
+            alert(" The area of the circle is " + (radius * radius * 3.14))
+        }
+        function areaTrapezium() {
+            var lengthTrapezium = prompt("Enter the length")
+            var widthTrapezium = prompt("Enter the width")
+            var heightTrapezium = prompt("Enter the height")
+            alert("The area of the trapezium is " + (lengthTrapezium + widthTrapezium/2 * heightTrapezium))
+        }
+        function areaParallelogram() {
+            var baseParallelogram = prompt("Enter the base")
+            var heightParallelogram = prompt("Enter the height")
+            alert("The area of the parallelogram is " + (heightParallelogram * baseParallelogram))
+        }
+        var shape = prompt("Choose the shape you want the area of: \n 1. Rectangle \n 2. Triangle \n 3. Circle \n 4. Trapezium \n 5. Parallelogram")
+        if (shape = "1") {
+            areaRectangle()
+        }
+        else if (shape = "2") {
+            areaTriangle()
+        }
+        else if (shape = "3") {
+            areaCircle()
+        }
+        else if (shape = "4") {
+            areaTrapezium()
+        }
+        else if (shape = "5") {
+            areaParallelogram()
+        }
+        else {
+            alert("Invalid input")
+        }
+    </script>
+</body>
+
+</html>
