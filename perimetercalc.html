@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function rectangle() {
+            var reclength = prompt("What is the length of the rectangle?")
+            var recwidth = prompt("What is the width of the rectangle?")
+            alert("The perimeter is " + (recwidth *2 + reclength *2))
+        }
+        function circle() {
+            var diam = prompt("What is the diameter of the circle")
+            alert("The perimeter of the circle is " + (3.14 * diam))
+        }
+        function square() {
+            var len = prompt("What is the length of the square?")
+            alert("The perimeter of the square is " + (len * 4))
+        }
+         var shape = prompt("Choose the shape you want the area of: \n 1. Rectangle \n 2. Circle \n 3. square  ")
+        if (shape == "1") {
+            rectangle()
+        }
+         else if (shape == "2") {
+            circle()
+        }
+        else if (shape == "3") {
+            square()
+        }
+        else {
+            alert("invalid input")
+        }
+
+
+    </script>
+</body>
+
+</html>
