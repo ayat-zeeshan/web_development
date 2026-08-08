@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome checker</title>
+</head>
+<body>
+    <script>
+        var text = prompt("Write an input to check if it is a palindrome")
+        var reversedText = text.split("").reverse().join("")
+        if (text == reversedText) {
+            alert("Your input is a palindrome") 
+        }
+        else {
+            alert("Your input is not a palindrome")
+        }
+    </script>
+</body>
+</html>
