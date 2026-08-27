@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stopwatch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column justify-content-center  vh-100 gap-3 align-items-center">
+
+    <div
+        class="card w-50 d-flex flex-column justify-content-center gap-3 align-items-center p-4 p-3 mb-2 bg-primary-subtle text-primary-emphasis">
+
+        <h1>Stopwatch</h1>
+        <h1 id="display">00:00:00</h1>
+        <div>
+            <button type="button" class="btn btn-success" onclick="start_watch()">Start</button>
+            <button type="button" class="btn btn-danger" onclick="stop_watch()">Stop</button>
+            <button type="button" class="btn btn-warning" onclick="reset_watch()">Reset</button>
+        </div>
+    </div>
+    <script>
+        var startTime;
+        var elapsedTime = 0
+        var timerInterval;
+        function timetoString(time) {
+            let diffInHrs = time / 3600000;
+
+            let hh = Math.floor(diffInHrs);
+
+            let diffInMin = (diffInHrs - hh) * 60;
+
+            let mm = Math.floor(diffInMin);
+
+            let diffInSec = (diffInMin - mm) * 60;
+
+            let ss = Math.floor(diffInSec);
+
+            let formattedMM = mm.toString().padStart(2, "0");
+
+            let formattedSS = ss.toString().padStart(2, "0");
+
+            let formattedHH = hh.toString().padStart(2, "0");
+
+            return `${formattedHH}:${formattedMM}:${formattedSS}`;
+        }
+        function start_watch() {
+            if (timerInterval) {
+                return
+            }
+            startTime = Date.now() - elapsedTime
+            timerInterval = setInterval(function print_time() {
+                elapsedTime = Date.now() - startTime
+                document.getElementById("display").innerHTML = timetoString(elapsedTime)
+            }, 1000)
+
+        }
+
+        function stop_watch() {
+            clearInterval(timerInterval)
+            timerInterval = null
+        }
+        function reset_watch() {
+            stop_watch()
+            elapsedTime = 0
+            document.getElementById("display").innerText = "00:00:00"
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
