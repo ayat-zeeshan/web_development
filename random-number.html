@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Random number generator: Even or Odd</h1>
+    <p id="number">0</p>
+    <p id="type"></p>
+    
+    <button onclick="start()">Click</button>
+    <button onclick="stop()">Stop</button>
+    
+    <script>
+        var interval = null; 
+
+        function start() {
+            if (interval != null) {
+                return;
+            }
+
+            interval = setInterval(function () {
+                var num = Math.floor(Math.random() * 10) + 1;
+                document.getElementById("number").innerText = num;
+
+                if (num == 2 || num == 4 || num == 6 || num == 8 || num == 10) {
+                    document.getElementById("type").innerText = "Even";
+                } else {
+                    document.getElementById("type").innerText = "Odd";
+                }
+
+            }, 300);
+        }
+
+        function stop() {
+            if (interval != null) {
+                clearInterval(interval);
+                interval = null; 
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
